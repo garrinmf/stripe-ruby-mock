@@ -28,6 +28,8 @@ def it_behaves_like_stripe(&block)
   it_behaves_like 'Customer Subscriptions', &block
   it_behaves_like 'Webhook Events API', &block
   it_behaves_like 'Country Spec API', &block
+  it_behaves_like 'SKU API', &block
+  it_behaves_like 'Product API', &block
 
   # Integration tests
   it_behaves_like 'Multiple Customer Cards'

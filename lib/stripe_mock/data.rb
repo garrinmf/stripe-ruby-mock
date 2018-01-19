@@ -488,6 +488,52 @@ module StripeMock
       }.merge(params)
     end
 
+    def self.mock_product(params={})
+      {
+        object: "product",
+        active: false,
+        attributes: nil,
+        caption: nil,
+        deactivate_on: nil,
+        description: nil,
+        images: nil,
+        livemode: false,
+        metadata: nil,
+        name: "Test Stripe Product",
+        package_dimensions: nil,
+        shippable: nil,
+        created: 1516371507,
+        updated: 1448272783,
+        skus: {
+          object: "list",
+          data: [],
+          has_more: false,
+          total_count: 0,
+          url: "/v1/skus?product="
+        },
+        statement_descriptor: "Test Stripe Product Descriptor",
+        type: "service",
+      }.merge(params)
+    end
+
+    def self.mock_sku(params={})
+      currency = params[:currency] || 'usd'
+      {
+        object: "sku",
+        active: true,
+        attributes: nil,
+        created: 1516371507,
+        updated: 1448272783,
+        currency: "usd",
+        image: nil,
+        inventory: nil,
+        livemode: false,
+        metadata: {},
+        package_dimensions: nil,
+        price: 1500,
+      }.merge(params)
+    end
+
     def self.mock_plan(params={})
       currency = params[:currency] || 'usd'
       {

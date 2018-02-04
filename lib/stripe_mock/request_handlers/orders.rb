@@ -19,6 +19,7 @@ module StripeMock
         end
 
         if params[:items]
+          params[:items] = params[:items].values if params[:items].is_a? Hash
           unless params[:items].is_a? Array
             raise Stripe::InvalidRequestError.new('You must supply a list of items', nil, http_status: 400)
           end
